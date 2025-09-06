@@ -1,0 +1,107 @@
+\documentclass[12pt,letter,oneside]{book}
+
+% =========================
+% PAQUETES
+% =========================
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb, amsthm} % Matemáticas
+\usepackage{graphicx}                 % Imágenes
+\usepackage{booktabs}                  % Tablas
+\usepackage{caption}                   % Formato de pies de figura/tabla
+\usepackage{hyperref}                  % Hipervínculos
+\usepackage{geometry}                  % Márgenes
+\geometry{margin=2.5cm}
+\usepackage{fancyhdr}                  % Encabezados y pies
+\usepackage{siunitx}                   % Unidades SI
+\newcommand{\comillas}[1]{``#1''}
+\usepackage{tocloft}
+\setlength{\cftbeforesecskip}{2pt} % Espacio antes de cada sección
+\setlength{\cftbeforesubsecskip}{1pt} % Espacio antes de cada subsección
+\usepackage{enumitem}
+\usepackage{threeparttablex} 
+\usepackage{array}
+\usepackage{rotating}      % en el preámbulo
+\usepackage{graphicx}      % si usas \resizebox
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\usepackage{multirow}
+\usepackage{subcaption}
+
+\usepackage[
+  backend=biber,
+  refsection=chapter,
+  defernumbers=true,
+  sorting=none
+]{biblatex}
+\addbibresource{bibliografia.bib}
+
+
+
+% Configuración global para todos los itemize
+\setlist[itemize]{
+  topsep=0pt,     % espacio antes y después de la lista
+  partopsep=0pt,  % espacio extra al iniciar la lista después de un párrafo
+  itemsep=3pt,    % espacio entre ítems
+  parsep=0pt      % espacio entre párrafos dentro de un ítem
+}
+
+
+% En el preámbulo, después de \usepackage y antes de \begin{document}
+\setlength{\parskip}{0.8em}   % Espacio entre párrafos (ajusta a tu gusto)
+%\setlength{\parindent}{0pt}   % Sin sangría, opcional
+
+% Numeración por capítulo
+\numberwithin{equation}{chapter}
+\numberwithin{figure}{chapter}
+\numberwithin{table}{chapter}
+
+% Encabezados
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO]{\rightmark}
+\fancyhead[RE]{\leftmark}
+
+% =========================
+% DOCUMENTO
+% =========================
+\begin{document}
+
+
+
+% Portada
+\begin{titlepage}
+    \centering
+     \vspace*{\fill}
+    {\Large Universidad de Chile}\\[1cm]
+    {\Huge \textbf{Apunte del curso}}\\[0.5cm]
+    {\LARGE ME4705 Fabricación digital}\\[2cm]
+    {\large Joakin Ugalde Castro}\\
+    {\large v0.1}\\[4cm]
+    \vfill
+\end{titlepage}
+
+\tableofcontents
+\chapter*{Prefacio}
+
+Este apunte es un trabajo en desarrollo, su objetivo es condensar el contenido del curso ME4705 Fabricación Digital del Departamento de Ingeniería Mecánica de la Universidad de Chile en un documento de apoyo. Este curso tiene como objetivo introducir a los estudiantes de ingeniería mecánica en los procesos de manufactura no convencionales, analizando sus principios de funcionamiento, los materiales empleados y la configuración de parámetros de operación, para comprender su influencia en la obtención y las propiedades finales de las piezas.
+
+Cada capítulo tratado corresponde a una familia de tecnologías, haciendo énfasis en los casos más comunes, o bien, los cuales pueden ser estudiados con experiencias prácticas dada la infraestructura actual de la Escuela de Ingeniería de la Universidad de Chile.
+
+Al momento de escribir este apunte, el curso asume una formación básica del lector en ciencias físicas y matemáticas, por lo que por ahora los conceptos serán tratados con la mesura correspondiente de un curso introductorio. Por la misma razón, se incluye un primer capítulo con tópicos de ciencia e ingeniería de materiales, así como de mecánica de sólidos, para sentar una base antes de pasar a los contenidos específicos del curso.
+
+Si bien, el curso trata de los procesos de fabricación, se tocan tangencialmente temas de control de sistemas, mecánica de fluidos, diseño mecánico, electrónica y controladores.
+
+
+% =========================
+% CAPÍTULOS DE CONTENIDO
+% =========================
+
+
+\include{capitulo1}
+\include{capitulo2}
+\include{capitulo3}
+\include{capitulo4}
+\include{capitulo5}
+\include{capitulo6}
+\end{document}
